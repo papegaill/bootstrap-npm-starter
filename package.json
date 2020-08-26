@@ -11,14 +11,12 @@
   },
   "homepage": "https://github.com/twbs/bootstrap-npm-starter#readme",
   "scripts": {
-    "build": "npm run css",
-    "css-compile": "node-sass --include-path node_modules --output-style compressed --source-map true --source-map-contents true --precision 6 scss -o assets/css/",
-    "css-prefix": "postcss --replace assets/css/starter.css --use autoprefixer --map",
-    "css-purge": "purgecss --css assets/css/starter.css --content index.html --output assets/css/",
+    "build": "npm run css && npm run js",
+    "css-compile": "node-sass --include-path node_modules --output-style compressed --source-map true --source-map-contents true --precision 6 src/scss -o assets/css/",
+    "css-prefix": "postcss --replace assets/css/styles.css --use autoprefixer --map",
     "css": "npm run css-compile && npm run css-prefix",
-    "server": "serve --listen 3000",
     "watch": "nodemon -e html,scss -x \"npm run css\"",
-    "test": "npm run css"
+    "js": "webpack"
   },
   "keywords": [
     "bootstrap",
@@ -39,7 +37,7 @@
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "postcss-cli": "^7.1.1",
-    "purgecss": "^2.1.2",
-    "serve": "^11.3.0"
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   }
 }
