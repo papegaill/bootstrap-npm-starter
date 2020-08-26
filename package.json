@@ -11,12 +11,12 @@
   },
   "homepage": "https://github.com/twbs/bootstrap-npm-starter#readme",
   "scripts": {
-    "build": "npm run css && npm run js",
+    "build": "npm run css && npm run js-compile",
     "css-compile": "node-sass --include-path node_modules --output-style compressed --source-map true --source-map-contents true --precision 6 src/scss -o assets/css/",
     "css-prefix": "postcss --replace assets/css/styles.css --use autoprefixer --map",
     "css": "npm run css-compile && npm run css-prefix",
     "watch": "nodemon -e html,scss -x \"npm run css\"",
-    "js": "webpack"
+    "js-compile": "webpack"
   },
   "keywords": [
     "bootstrap",
